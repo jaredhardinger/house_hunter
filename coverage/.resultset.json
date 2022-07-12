@@ -243,21 +243,13 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
       "/Users/lappy/turing/2mod/projects/relational_rails/app/helpers/application_helper.rb": {
         "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/lappy/turing/2mod/projects/relational_rails/spec/models/agent_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
           null
         ]
       },
@@ -279,6 +271,10 @@
         "lines": [
           1,
           1,
+          0,
+          null,
+          null,
+          1,
           1,
           null,
           null
@@ -291,6 +287,6 @@
         ]
       }
     },
-    "timestamp": 1657596482
+    "timestamp": 1657629823
   }
 }
