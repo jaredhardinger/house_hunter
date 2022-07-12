@@ -244,6 +244,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -253,7 +254,7 @@
           null
         ]
       },
-      "/Users/lappy/turing/2mod/projects/relational_rails/app/models/agent.rb": {
+      "/Users/lappy/turing/2mod/projects/relational_rails/app/models/house.rb": {
         "lines": [
           1,
           null,
@@ -267,15 +268,11 @@
           null
         ]
       },
-      "/Users/lappy/turing/2mod/projects/relational_rails/app/controllers/agents_controller.rb": {
+      "/Users/lappy/turing/2mod/projects/relational_rails/app/controllers/houses_controller.rb": {
         "lines": [
           1,
           1,
-          0,
-          null,
-          null,
-          1,
-          1,
+          3,
           null,
           null
         ]
@@ -287,6 +284,6 @@
         ]
       }
     },
-    "timestamp": 1657629823
+    "timestamp": 1657659342
   }
 }

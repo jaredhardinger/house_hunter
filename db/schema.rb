@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_12_030831) do
+ActiveRecord::Schema.define(version: 2022_07_12_135710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2022_07_12_030831) do
     t.datetime "updated_at", null: false
     t.boolean "licensed_realtor"
     t.float "review_rating"
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.string "address"
+    t.integer "price"
+    t.boolean "for_sale"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
