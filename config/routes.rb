@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/houses/:id', to: 'houses#show'
   get '/houses', to: 'houses#index'
   post '/agents', to: 'agents#create'
+  get '/agents/:id/edit', to: 'agents#edit'
+  patch '/agents/:id', to: 'agents#update'
 end

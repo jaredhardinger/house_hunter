@@ -16,6 +16,17 @@ class AgentsController < ApplicationController
     redirect_to "/agents"
   end
 
+  def edit
+    @agent = Agent.find(params[:id])
+  end
+
+  def update
+    agent = Agent.find(params[:id])
+    agent.update(agent_params)
+    redirect_to "/agents/#{agent.id}"
+  end
+
+private
   def agent_params
     params.permit(:name, :review_rating, :licensed_realtor)
   end
