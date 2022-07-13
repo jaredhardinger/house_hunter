@@ -55,4 +55,18 @@ RSpec.describe 'houses index page', type: :feature do
     expect(page).to have_content(house_1.for_sale)
     expect(page).to have_content(house_2.for_sale)
   end
+
+  it 'links back to the house and agent index' do
+    agent_1 = Agent.create!( name:             "Steve Chicken",
+                             licensed_realtor: true,
+                             review_rating:    4.8)
+
+    visit "/houses"
+    click_link('Houses Index')
+    expect(page).to have_current_path('/houses')
+
+    visit "/houses"
+    click_link('Agents Index')
+    expect(page).to have_current_path('/agents')
+  end
 end

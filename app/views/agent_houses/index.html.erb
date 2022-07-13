@@ -1,3 +1,4 @@
+<h3><%= link_to 'Houses Index', '/houses' %>   <%= link_to 'Agents Index' , '/agents' %></h3>
 <h1>Houses listed by <%= @agent.name %>:</h1>
 <% @houses.each do |house| %>
   <p><h3><%= house.address %></h3></p>
