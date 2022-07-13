@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post '/agents/:id/houses', to: 'agent_houses#create'
   get '/houses/:id/edit', to: 'houses#edit'
   patch '/houses/:id', to: 'houses#update'
+  delete '/agents/:id', to: 'agents#destroy'
 end

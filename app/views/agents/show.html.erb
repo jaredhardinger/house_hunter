@@ -5,5 +5,8 @@
 <p>Licensed Realtor?: <%= @agent.licensed_realtor %></p>
 <p>Number of Houses Listed: <%= @houses.count %></p>
 <p><%= link_to 'View Houses For Sale', "/agents/#{@agent.id}/houses" %></p>
-<p><%= link_to 'Update Agent', "/agents/#{@agent.id}/edit", method: :get %></p>
+<p>
+  <%= link_to 'Update Agent', "/agents/#{@agent.id}/edit", method: :get %>
+  <%= link_to 'Delete Agent', "/agents/#{@agent.id}", method: :delete %>
+</p>
 <p><small>created: <%= @agent.created_at %>, updated: <%= @agent.updated_at %></small></p>

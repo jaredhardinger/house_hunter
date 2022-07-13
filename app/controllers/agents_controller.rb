@@ -26,6 +26,12 @@ class AgentsController < ApplicationController
     redirect_to "/agents/#{agent.id}"
   end
 
+  def destroy
+    agent = Agent.find(params[:id])
+    agent.destroy
+    redirect_to '/agents'
+  end
+
 private
   def agent_params
     params.permit(:name, :review_rating, :licensed_realtor)
