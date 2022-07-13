@@ -1,7 +1,11 @@
 class AgentHousesController < ApplicationController
   def index
     @agent = Agent.find(params[:agent_id])
-    @houses = @agent.houses
+    if params[:sort] == 'alpha'
+      @houses = @agent.houses.alphasort
+    else
+      @houses = @agent.houses
+    end
   end
 
   def new
