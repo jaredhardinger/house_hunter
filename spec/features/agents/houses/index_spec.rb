@@ -20,6 +20,5 @@ RSpec.describe 'Agents houses page', type: :feature do
 
     expect(page).to have_content(house_1.address)
     expect(page).to have_content(house_2.address)
-    save_and_open_page
   end
 end

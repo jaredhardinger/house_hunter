@@ -1,6 +1,6 @@
 class AgentsController < ApplicationController
   def index
-    @agents = Agent.all
+    @agents = Agent.newest_first
   end
 
   def show
