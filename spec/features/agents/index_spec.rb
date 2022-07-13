@@ -57,6 +57,5 @@ RSpec.describe 'agents index page', type: :feature do
 
     visit '/agents'
     expect(page).to have_content("created:")
-    save_and_open_page
   end
 end

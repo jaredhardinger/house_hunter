@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   post '/agents', to: 'agents#create'
   get '/agents/:id/edit', to: 'agents#edit'
   patch '/agents/:id', to: 'agents#update'
+  get '/agents/:id/houses/new', to: 'agent_houses#new'
+  post '/agents/:id/houses', to: 'agent_houses#create'
 end
