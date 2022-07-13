@@ -77,4 +77,14 @@ RSpec.describe 'agents show page', type: :feature do
     expect(page).to have_current_path('/agents')
   end
 
+  it 'links back to the agent houses page' do
+    agent_1 = Agent.create!( name:             "Steve Chicken",
+                             licensed_realtor: true,
+                             review_rating:    4.8)
+
+    visit "/agents/#{agent_1.id}"
+    click_link('View Houses For Sale')
+    expect(page).to have_current_path("/agents/#{agent_1.id}/houses")
+  end
+
 end
