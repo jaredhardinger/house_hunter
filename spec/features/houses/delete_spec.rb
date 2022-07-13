@@ -24,4 +24,19 @@ RSpec.describe 'destroying a house', type: :feature do
     expect(current_path).to eq("/houses")
     expect(page).to_not have_content('292 5th Ave')
   end
+
+  it 'can delete the house from the house index page' do
+    agent = Agent.create!( name:             "Sally Closer",
+                           licensed_realtor: true,
+                           review_rating:    4.5)
+    house = agent.houses.create!( address:     "292 5th Ave",
+                                    price:       195000,
+                                    for_sale:    true)
+
+    visit "/houses"
+    expect(page).to have_content('292 5th Ave')
+    click_link('Delete House')
+    expect(current_path).to eq("/houses")
+    expect(page).to_not have_content('292 5th Ave')
+  end
 end
