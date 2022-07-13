@@ -8,4 +8,12 @@
   <p><small>created: <%= house.created_at %>, updated: <%= house.updated_at %></small></p>
 <% end %>
 <p><%= link_to 'Sort Alphabetically', "/agents/#{@agent.id}/houses?sort=alpha" %></p>
+
+<%= form_with url: "/agents/#{@agent.id}/houses?min_price=#{:min_price}", method: :get, local: true, skip_enforcing_utf8: true do |form| %>
+  <p><%= form.label :minimum_price %>
+  <%= form.number_field :minimum_price %>
+  <%= form.submit "Submit", name: nil %></p>
+<% end %>
+
+
 <p><%= link_to 'Add New House to Agent', "/agents/#{@agent.id}/houses/new" %></p>
