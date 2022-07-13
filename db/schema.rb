@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_12_135710) do
+ActiveRecord::Schema.define(version: 2022_07_12_222518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 2022_07_12_135710) do
     t.boolean "for_sale"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "agent_id"
+    t.index ["agent_id"], name: "index_houses_on_agent_id"
   end
 
+  add_foreign_key "houses", "agents"
 end

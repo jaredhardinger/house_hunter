@@ -1,7 +1,7 @@
 <h1>Houses</h1>
 
 <% @houses.each do |house| %>
-  <p>Address: <%= house.address %></p>
+  <p><h3>Address: <%= house.address %></h3></p>
   <p>Price: $<%= house.price %></p>
   <p>On the Market?: <%= house.for_sale %></p>
   <p><small>created: <%= house.created_at %>, updated: <%= house.updated_at %></small></p>

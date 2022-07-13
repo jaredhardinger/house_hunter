@@ -6,12 +6,15 @@ require 'rails_helper'
 
 RSpec.describe 'houses index page', type: :feature do
   it 'can see all house names [street addresses]' do
-    house_1 = House.create!( address:     "292 5th Ave",
+    agent = Agent.create!( name:             "Steve Chicken",
+                           licensed_realtor: true,
+                           review_rating:    4.8)
+    house_1 = agent.houses.create!( address:     "292 5th Ave",
                              price:       195000,
                              for_sale:    true)
-    house_2 = House.create!( address:     "14 Cherry St",
+    house_2 = agent.houses.create!( address:     "14 Cherry St",
                              price:       265000,
-                             for_sale:    true)
+                             for_sale:    false)
 
     visit '/houses'
 
@@ -20,32 +23,36 @@ RSpec.describe 'houses index page', type: :feature do
   end
 
   it 'can see all house prices' do
-    house_1 = House.create!( address:     "292 5th Ave",
+    agent = Agent.create!( name:             "Steve Chicken",
+                           licensed_realtor: true,
+                           review_rating:    4.8)
+    house_1 = agent.houses.create!( address:     "292 5th Ave",
                              price:       195000,
                              for_sale:    true)
-    house_2 = House.create!( address:     "14 Cherry St",
+    house_2 = agent.houses.create!( address:     "14 Cherry St",
                              price:       265000,
-                             for_sale:    true)
+                             for_sale:    false)
 
     visit '/houses'
 
     expect(page).to have_content(house_1.price)
     expect(page).to have_content(house_2.price)
-    save_and_open_page
   end
 
   it 'can see if house is for sale' do
-    house_1 = House.create!( address:     "292 5th Ave",
+    agent = Agent.create!( name:             "Steve Chicken",
+                           licensed_realtor: true,
+                           review_rating:    4.8)
+    house_1 = agent.houses.create!( address:     "292 5th Ave",
                              price:       195000,
                              for_sale:    true)
-    house_2 = House.create!( address:     "14 Cherry St",
+    house_2 = agent.houses.create!( address:     "14 Cherry St",
                              price:       265000,
-                             for_sale:    true)
+                             for_sale:    false)
 
     visit '/houses'
 
     expect(page).to have_content(house_1.for_sale)
     expect(page).to have_content(house_2.for_sale)
-    save_and_open_page
   end
 end

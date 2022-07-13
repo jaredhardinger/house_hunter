@@ -46,7 +46,6 @@ RSpec.describe 'agents show page', type: :feature do
     visit "/agents/#{agent_1.id}"
     expect(page).to have_content(agent_1.created_at)
     expect(page).to have_content(agent_1.updated_at)
-    save_and_open_page
   end
 
 end
