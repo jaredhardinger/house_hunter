@@ -1,0 +1,11 @@
+<h1>Update House</h1>
+
+<%= form_with url: "/houses/#{@house.id}", method: :patch, local: true do |form| %>
+  <p><%= form.label :address %>
+  <%= form.text_field :address %></p>
+  <p><%= form.label :price %>
+  <%= form.text_field :price %></p>
+  <p><%= form.label :for_sale %>
+  <%= form.check_box :for_sale %></p>
+  <p><%= form.submit "Update House" %></p>
+<% end %>

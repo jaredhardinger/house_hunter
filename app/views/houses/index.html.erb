@@ -2,9 +2,10 @@
 
 <h1>Houses</h1>
 
-<% @houses.each do |house| %>
-  <p><h3>Address: <%= link_to "#{house.address}", "/houses/#{house.id}" %></h3></p>
+<% House.for_sale.each do |house| %>
+  <p><h3><%= link_to "#{house.address}", "/houses/#{house.id}" %></h3></p>
   <p>Price: $<%= house.price %></p>
   <p>On the Market?: <%= house.for_sale %></p>
+  <p><small><%= link_to "Edit House Info", "/houses/#{house.id}/edit" %></small></p>
   <p><small>created: <%= house.created_at %>, updated: <%= house.updated_at %></small></p>
 <% end %>

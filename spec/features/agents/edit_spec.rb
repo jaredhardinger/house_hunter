@@ -41,6 +41,5 @@ RSpec.describe 'agent update', type: :feature do
     expect(page).to have_content("Steven Chicken")
     expect(page).to have_content(4.5)
     expect(page).to have_content(false)
-    save_and_open_page
   end
 end

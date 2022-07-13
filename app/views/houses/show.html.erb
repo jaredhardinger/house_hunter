@@ -1,7 +1,9 @@
 <h3><%= link_to 'Houses Index', '/houses' %>   <%= link_to 'Agents Index' , '/agents' %></h3>
 
-<h1><%= @houses.address %></h1>
-<p>Price: <%= @houses.price %></p>
-<p>On the market?: <%= @houses.for_sale %></p>
-<p>Listed by: <%= @houses.agent.name %></p>
-<p><small>created: <%= @houses.created_at %>, updated: <%= @houses.updated_at %></small></p>
+<h1><%= @house.address %></h1>
+<p>Price: <%= @house.price %></p>
+<p>On the market?: <%= @house.for_sale %></p>
+<p>Listed by: <%= @house.agent.name %></p>
+<p><small>created: <%= @house.created_at %>, updated: <%= @house.updated_at %></small></p>
+
+<p><%= link_to 'Update House Details', "/houses/#{@house.id}/edit" %></p>
