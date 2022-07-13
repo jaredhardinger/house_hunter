@@ -17,6 +17,12 @@ class HousesController < ApplicationController
     redirect_to "/houses/#{house.id}"
   end
 
+  def destroy
+    house = House.find(params[:id])
+    house.destroy
+    redirect_to '/houses'
+  end
+
 private
   def house_params
     params.permit(:address, :price, :for_sale)

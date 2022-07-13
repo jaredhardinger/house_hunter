@@ -8,7 +8,7 @@
 require 'rails_helper'
 
 RSpec.describe 'destroying an agent', type: :feature do
-  it 'can delete the agent from the index page' do
+  it 'can delete the agent from the show page' do
     agent = Agent.create!( name:             "Sally Closer",
                            licensed_realtor: true,
                            review_rating:    4.5)
