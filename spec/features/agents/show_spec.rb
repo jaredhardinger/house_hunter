@@ -48,4 +48,20 @@ RSpec.describe 'agents show page', type: :feature do
     expect(page).to have_content(agent_1.updated_at)
   end
 
+  it 'displays the agents number of houses' do
+    agent_1 = Agent.create!( name:             "Steve Chicken",
+                             licensed_realtor: true,
+                             review_rating:    4.8)
+    house_1 = agent_1.houses.create!( address:     "292 5th Ave",
+                                    price:       195000,
+                                    for_sale:    true)
+    house_2 = agent_1.houses.create!( address:     "14 Cherry St",
+                                    price:       265000,
+                                    for_sale:    false)
+
+    visit "/agents/#{agent_1.id}"
+    expect(page).to have_content("Houses Listed: 2")
+    save_and_open_page
+  end
+
 end

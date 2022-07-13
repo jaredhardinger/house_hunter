@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Agent, type: :model do
+  it {should have_many :houses}
+
   describe 'class methods' do
     describe 'newest_first' do
       it 'returns houses ordered by most recent creation' do

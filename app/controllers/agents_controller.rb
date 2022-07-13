@@ -5,5 +5,6 @@ class AgentsController < ApplicationController
 
   def show
     @agent = Agent.find(params[:id])
+    @houses = @agent.houses
   end
 end
