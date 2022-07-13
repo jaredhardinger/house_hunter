@@ -14,7 +14,7 @@ RSpec.describe 'houses index page', type: :feature do
                              for_sale:    true)
     house_2 = agent.houses.create!( address:     "14 Cherry St",
                              price:       265000,
-                             for_sale:    false)
+                             for_sale:    true)
 
     visit '/houses'
 
@@ -31,7 +31,7 @@ RSpec.describe 'houses index page', type: :feature do
                              for_sale:    true)
     house_2 = agent.houses.create!( address:     "14 Cherry St",
                              price:       265000,
-                             for_sale:    false)
+                             for_sale:    true)
 
     visit '/houses'
 
@@ -48,7 +48,7 @@ RSpec.describe 'houses index page', type: :feature do
                              for_sale:    true)
     house_2 = agent.houses.create!( address:     "14 Cherry St",
                              price:       265000,
-                             for_sale:    false)
+                             for_sale:    true)
 
     visit '/houses'
 
@@ -68,5 +68,21 @@ RSpec.describe 'houses index page', type: :feature do
     visit "/houses"
     click_link('Agents Index')
     expect(page).to have_current_path('/agents')
+  end
+
+  it 'only shows houses for sale' do
+    agent = Agent.create!( name:             "Steve Chicken",
+                           licensed_realtor: true,
+                           review_rating:    4.8)
+    house_1 = agent.houses.create!( address:     "292 5th Ave",
+                             price:       195000,
+                             for_sale:    true)
+    house_2 = agent.houses.create!( address:     "14 Cherry St",
+                             price:       265000,
+                             for_sale:    false)
+
+    visit '/houses'
+    expect(page).to have_content(house_1.address)
+    expect(page).to_not have_content(house_2.address)
   end
 end
