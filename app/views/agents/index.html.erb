@@ -3,7 +3,10 @@
 <h1>Real Estate Agents</h1>
 
 <% @agents.each do |agent| %>
-  <p><%= link_to "#{agent.name}", "/agents/#{agent.id}" %><small> created: <%= agent.created_at %></small></p>
+  <p class='agent-name'><%= link_to "#{agent.name}", "/agents/#{agent.id}" %>
+    <small><%= link_to 'Edit Agent', "/agents/#{agent.id}/edit" %>
+    </small></p>
+  <p><small> created: <%= agent.created_at %></small></p>
 <% end %>
 
 <p><%= link_to 'New Agent', '/agents/new' %></p>
