@@ -33,5 +33,9 @@ RSpec.describe House, type: :model do
       expect(House.for_sale).to_not include(@house_2)
       expect(House.for_sale).to_not include(@house_4)
     end
+
+    it 'sorts alphabetically by address' do
+      expect(House.alphasort).to eq([@house_4, @house_2, @house_1, @house_3])
+    end
   end
 end

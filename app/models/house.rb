@@ -4,4 +4,8 @@ class House < ApplicationRecord
   def self.for_sale
     self.where(for_sale: true)
   end
+
+  def self.alphasort
+    self.order(:address)
+  end
 end
