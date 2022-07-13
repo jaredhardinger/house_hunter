@@ -5,3 +5,5 @@
 <% @agents.each do |agent| %>
   <p><%= link_to "#{agent.name}", "/agents/#{agent.id}" %><small> created: <%= agent.created_at %></small></p>
 <% end %>
+
+<p><%= link_to 'New Agent', '/agents/new' %></p>

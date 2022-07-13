@@ -1,0 +1,11 @@
+<h1>Update Agent</h1>
+
+<%= form_with url: "/agents/#{@agent.id}", method: :patch, local: true do |form| %>
+  <p><%= form.label :name %>
+  <%= form.text_field :name %></p>
+  <p><%= form.label :review_rating %>
+  <%= form.text_field :review_rating %></p>
+  <p><%= form.label :licensed_realtor %>
+  <%= form.check_box :licensed_realtor %></p>
+  <p><%= form.submit "Update Agent" %></p>
+<% end %>
