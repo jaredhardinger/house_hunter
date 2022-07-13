@@ -1,8 +1,11 @@
 class AgentHousesController < ApplicationController
   def index
     @agent = Agent.find(params[:agent_id])
+
     if params[:sort] == 'alpha'
       @houses = @agent.houses.alphasort
+    elsif params[:minimum_price]
+      @houses = @agent.houses.where("price >= #{params[:minimum_price]}")
     else
       @houses = @agent.houses
     end

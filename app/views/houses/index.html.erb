@@ -7,5 +7,6 @@
   <p>Price: $<%= house.price %></p>
   <p>On the Market?: <%= house.for_sale %></p>
   <p><small><%= link_to "Edit House Info", "/houses/#{house.id}/edit" %></small></p>
+  <p><small><%= link_to 'Delete House', "/houses/#{house.id}", method: :delete %></small></p>
   <p><small>created: <%= house.created_at %>, updated: <%= house.updated_at %></small></p>
 <% end %>
