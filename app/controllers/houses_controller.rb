@@ -4,6 +4,21 @@ class HousesController < ApplicationController
   end
 
   def show
-    @houses = House.find(params[:id])
+    @house = House.find(params[:id])
+  end
+
+  def edit
+    @house = House.find(params[:id])
+  end
+
+  def update
+    house = House.find(params[:id])
+    house.update(house_params)
+    redirect_to "/houses/#{house.id}"
+  end
+
+private
+  def house_params
+    params.permit(:address, :price, :for_sale)
   end
 end
