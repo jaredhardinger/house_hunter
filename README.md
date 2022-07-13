@@ -1,24 +1,23 @@
-# README
+### About
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* This application models a real estate database with Real Estate Agents as 'parents' and the houses they represent as 'children' 
 
-Things you may want to cover:
+### Built With
 
-* Ruby version
+* ruby 2.7.2, Rails 5.2.8, rspec 4.01
 
-* System dependencies
+### Getting Started
 
-* Configuration
+* Fork and clone the repository. Ensure ruby and rails are the same version, bundle install the gems, and then from the application's root run a `rails server` and navigate to `localhost:3000` in a web browser.
 
-* Database creation
+### Testing
 
-* Database initialization
+* Tests are run using RSpec with the rspec-rails, capybara, simplecov, and shoulda-matchers gems installed. SimpleCov calculates 100% coverage.
 
-* How to run the test suite
+### Challenges & Wins
 
-* Services (job queues, cache servers, search engines, etc.)
+* The most difficult component was using query params and sorting out how, where, and why to access them. Combining the query params with a submitted form further boggled the mind. In the end, I got it to work, though!
 
-* Deployment instructions
+### Author(s)
 
-* ...
+* Jared Hardinger
