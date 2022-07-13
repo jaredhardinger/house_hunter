@@ -1,5 +1,7 @@
 <h3><%= link_to 'Houses Index', '/houses' %>   <%= link_to 'Agents Index' , '/agents' %></h3>
+
 <h1>Houses listed by <%= @agent.name %>:</h1>
+
 <% @houses.each do |house| %>
   <p><h3 class='house-addy'><%= link_to "#{house.address}", "/houses/#{house.id}" %></h3></p>
   <p>Price: $<%= house.price %></p>
@@ -7,6 +9,7 @@
   <p><small><%= link_to "Edit House Info", "/houses/#{house.id}/edit" %></small></p>
   <p><small>created: <%= house.created_at %>, updated: <%= house.updated_at %></small></p>
 <% end %>
+
 <p><%= link_to 'Sort Alphabetically', "/agents/#{@agent.id}/houses?sort=alpha" %></p>
 
 <%= form_with url: "/agents/#{@agent.id}/houses?min_price=#{:min_price}", method: :get, local: true, skip_enforcing_utf8: true do |form| %>
@@ -14,6 +17,5 @@
   <%= form.number_field :minimum_price %>
   <%= form.submit "Submit", name: nil %></p>
 <% end %>
-
 
 <p><%= link_to 'Add New House to Agent', "/agents/#{@agent.id}/houses/new" %></p>
