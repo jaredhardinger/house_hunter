@@ -46,4 +46,17 @@ RSpec.describe 'agents index page', type: :feature do
     click_link('Agents Index')
     expect(page).to have_current_path('/agents')
   end
+
+  it 'displays when the agent record was created' do
+    agent_1 = Agent.create!( name:             "Steve Chicken",
+                             licensed_realtor: true,
+                             review_rating:    4.8)
+    agent_2 = Agent.create!( name:             "Shannon Tortellini",
+                             licensed_realtor: true,
+                             review_rating:    4.3)
+
+    visit '/agents'
+    expect(page).to have_content("created:")
+    save_and_open_page
+  end
 end
