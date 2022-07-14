@@ -8,7 +8,7 @@
 
 ### Getting Started
 
-* Fork and clone the repository. Ensure ruby and rails are the same version, bundle install the gems, and then from the application's root run a `rails server` and navigate to `localhost:3000` in a web browser.
+* Fork and clone the repository. Ensure ruby and rails are the same version, bundle install the gems, and then from the application's root run a `rails server` and navigate to `localhost:3000` in a web browser. See the schema design at [this link](https://app.dbdesigner.net/designer/schema/539869)
 
 ### Testing
 
